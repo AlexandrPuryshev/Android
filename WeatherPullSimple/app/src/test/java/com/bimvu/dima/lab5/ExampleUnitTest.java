@@ -1,4 +1,4 @@
-package com.kronos004.weatherpullsimple;
+package com.bimvu.dima.lab5;
 
 import org.junit.Test;
 

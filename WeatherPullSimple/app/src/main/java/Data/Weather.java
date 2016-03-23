@@ -1,113 +1,88 @@
-package Data;
+package data;
+
+
+import java.util.ArrayList;
 
 public class Weather {
-
-    private City city;
-
-    private String temperature;
-    private String temperatureMax;
-    private String temperatureMin;
-
-    private String humidity;
-    private String humidityUnit;
-
-    private String pressure;
-    private String pressureUnit;
-
-    private Wind wind;
-
-    private String cloudsValue;
+    private String timeFrom;
+    private String timeTo;
+    private double temperature;
+    private String temperatureUnit;
+    private int humidity;
+    private String humUnit;
     private String cloudsName;
 
-    private String visibilityValue;
 
-    private String precipitationValue;
+    public Weather(ArrayList<String> weather){
+//            (String timeFrom, String timeTo, double temperature, String temperatureUnit,
+//                   int humidity, String humUnit){
 
-    private String weatherNumber;
-    private String weatherValue;
-    private String weatherIcon;
-
-    private String lastUpdate;
-
-
-    public City getCity() {
-        return city;
+        this.timeFrom = weather.get(0).replace("T", " ");
+        this.timeTo = weather.get(1).replace("T", " ");
+        this.temperature = Double.parseDouble(weather.get(2));
+        this.temperatureUnit = weather.get(3);
+        this.humidity = Integer.parseInt(weather.get(4));
+        this.humUnit = weather.get(5);
     }
 
-    public void setCity(City city) {
-        this.city = city;
+    public String getTimeFrom() {
+        return timeFrom;
     }
 
-    public String getTemperature() {
+    public void setTimeFrom(String timeFrom) {
+        this.timeFrom = timeFrom;
+    }
+
+    public String getTimeTo() {
+        return timeTo;
+    }
+
+    public void setTimeTo(String timeTo) {
+        this.timeTo = timeTo;
+    }
+
+    public double getTemperature() {
         return temperature;
     }
 
-    public void setTemperature(String temperature) {
+    public void setTemperature(double temperature) {
         this.temperature = temperature;
     }
 
-    public String getTemperatureMax() {
-        return temperatureMax;
-    }
-
-    public void setTemperatureMax(String temperatureMax) {
-        this.temperatureMax = temperatureMax;
-    }
-
-    public String getTemperatureMin() {
-        return temperatureMin;
-    }
-
-    public void setTemperatureMin(String temperatureMin) {
-        this.temperatureMin = temperatureMin;
-    }
-
-    public String getHumidity() {
+    public int getHumidity() {
         return humidity;
     }
 
-    public void setHumidity(String humidity) {
+    public void setHumidity(int humidity) {
         this.humidity = humidity;
     }
 
-    public String getHumidityUnit() {
-        return humidityUnit;
+    public String getHumUnit() {
+        return humUnit;
     }
 
-    public void setHumidityUnit(String humidityUnit) {
-        this.humidityUnit = humidityUnit;
+    public void setHumUnit(String humUnit) {
+        this.humUnit = humUnit;
     }
 
-    public String getPressure() {
-        return pressure;
+    public String getStringTime(){
+        return "Time: " + timeFrom + " to " + timeTo;
     }
 
-    public void setPressure(String pressure) {
-        this.pressure = pressure;
+    public String getStringTemperature(){
+        return String.valueOf(temperature) + " " + temperatureUnit;
     }
 
-    public String getPressureUnit() {
-        return pressureUnit;
+    public String getHumidityWithUnit() {
+        return humidity + humUnit;
     }
 
-    public void setPressureUnit(String pressureUnit) {
-        this.pressureUnit = pressureUnit;
+    public String getTemperatureUnit() {
+        return temperatureUnit;
     }
 
-    public Wind getWind() {
-        return wind;
-    }
-
-    public void setWind(Wind wind) {
-        this.wind = wind;
-    }
-
-    public String getCloudsValue() {
-        return cloudsValue;
-    }
-
-    public void setCloudsValue(String cloudsValue) {
-        this.cloudsValue = cloudsValue;
+    public void setTemperatureUnit(String temperatureUnit) {
+        this.temperatureUnit = temperatureUnit;
     }
 
     public String getCloudsName() {
@@ -116,66 +91,5 @@ public class Weather {
 
     public void setCloudsName(String cloudsName) {
         this.cloudsName = cloudsName;
-    }
-
-    public String getVisibilityValue() {
-        return visibilityValue;
-    }
-
-    public void setVisibilityValue(String visibilityValue) {
-        this.visibilityValue = visibilityValue;
-    }
-
-    public String getPrecipitationValue() {
-        return precipitationValue;
-    }
-
-    public void setPrecipitationValue(String precipitationValue) {
-        this.precipitationValue = precipitationValue;
-    }
-
-    public String getWeatherNumber() {
-        return weatherNumber;
-    }
-
-    public void setWeatherNumber(String weatherNumber) {
-        this.weatherNumber = weatherNumber;
-    }
-
-    public String getWeatherValue() {
-        return weatherValue;
-    }
-
-    public void setWeatherValue(String weatherValue) {
-        this.weatherValue = weatherValue;
-    }
-
-    public String getWeatherIcon() {
-        return weatherIcon;
-    }
-
-    public void setWeatherIcon(String weatherIcon) {
-        this.weatherIcon = weatherIcon;
-    }
-
-    public String getLastUpdate() {
-        return lastUpdate;
-    }
-
-    public void setLastUpdate(String lastUpdate) {
-        this.lastUpdate = lastUpdate;
-    }
-
-    @Override
-    public String toString() {
-        String out = "Weather: \n";
-        out += "City: " + city.getName() + "\n";
-        out += "Country: " + city.getCountry() + "\n";
-        out += "Temperature: " + temperature + "\n";
-        out += "Humidity: " + humidity + humidityUnit + "\n";
-        out += "Pressure: " + pressure + pressureUnit + "\n";
-        out += "Wind: " + wind.getName() + " Direction: " + wind.getDirectionName() + "\n";
-        out += "Clouds: " + cloudsName;
-        return out;
     }
 }

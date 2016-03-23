@@ -1,4 +1,8 @@
 <resources>
-    <string name="app_name">WeatherPullSimple</string>
-    <string name="load">Load</string>
+    <string name="app_name">Lab5</string>
+    <string name="string_btnPullDescription">Get by XMLPull</string>
+    <string name="string_btnSimpleDescription">Get by XMLSimple</string>
+    <string name="string_temperature">Temperature:</string>
+    <string name="string_humidity">Humidity:</string>
+    <string name="button_name">LOAD</string>
 </resources>

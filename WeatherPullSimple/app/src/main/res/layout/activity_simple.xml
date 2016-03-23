@@ -7,19 +7,24 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.bimvu.dima.lab5.MainActivity">
+    tools:context="com.bimvu.dima.lab5.SimpleActivity">
+
 
     <Button
-        android:id="@+id/btnGetXMLPull"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/string_btnPullDescription"/>
+        android:text="@string/button_name"
+        android:id="@+id/buttonSimple"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
-    <Button
-        android:id="@+id/btnGetXMLSimple"
+    <ListView
+        android:id="@+id/lstSimpleWeather"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/btnGetXMLPull"
-        android:text="@string/string_btnSimpleDescription"/>
+        android:layout_below="@+id/buttonSimple">
+    </ListView>
 
 </RelativeLayout>
